@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ze.Dao.BookMapper">
+    <!--    添加一本书-->
+    <insert id="AddBook" parameterType="ze.Pojo.Books">
+        insert into textdemoztz.z_book (name, counts, detail)
+        VALUES(#{name},#{counts},#{detail})
+    </insert>
+
+    <!--    删除一本书-->
+    <delete id="DeleteById" parameterType="ze.Pojo.Books">
+        delete from textdemoztz.z_book where id=#{id};
+    </delete>
+
+    <!--    更新-->
+    <update id="UpdateBook" parameterType="ze.Pojo.Books">
+        update textdemoztz.z_book
+        set name=#{name},
+            counts=#{counts},
+            detail=#{detail}
+        where id = #{id}
+    </update>
+
+    <!--    查询-->
+    <select id="SelectBookId" resultType="ze.Pojo.Books">
+        select *
+        from textdemoztz.z_book
+        where id = #{id}
+    </select>
+    <!--    查询全部-->
+    <select id="SelectAllBoos" resultType="ze.Pojo.Books">
+        select *
+        from textdemoztz.z_book
+    </select>
+    <select id="querybookname" resultType="ze.Pojo.Books">
+        select * from textdemoztz.z_book where name like #{name}
+    </select>
+</mapper>

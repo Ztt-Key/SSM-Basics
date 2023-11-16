@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ze.Dao.UserMapper">
+
+    <select id="select" resultType="ze.Pojo.User">
+        select * from textdemoztz.z_user where username=#{username} and password=#{password}
+    </select>
+</mapper>

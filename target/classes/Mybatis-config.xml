@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <!-- 打开延迟加载的开关 -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- 将积极加载改为消极加载（即按需加载） -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!-- 打开全局缓存开关（二级缓存）默认值就是 true -->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
+<!--配置数据源交给spring做-->
+    <typeAliases>
+        <package name="ze.Pojo"/>
+    </typeAliases>
+
+    <mappers>
+        <mapper class="ze.Dao.BookMapper"/>
+    </mappers>
+</configuration>
